@@ -7,7 +7,8 @@
 		<title>cadastro</title>
 		<meta name="description" content="">
 		<meta name="author" content="Fernando">
-		<link rel="stylesheet" href="cadastro.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/cadastro.css" type="text/css" media="all" />
+		<script src="js/cadastro.js"></script>
 
 	</head>
 
@@ -24,7 +25,7 @@
 			</div>
 			<div class="container">
 				<div class="cadastro">
-					<form name="menuForm" method="post" id="formulario">
+					<form name="menuForm" method="post" id="formulario" onsubmit="return(Enviar())">
 						<h2>Cadastre-se:</h2>
 						<label>
 							<input type="text" class="input_text" name="nome" id="name" size="35" value="" placeholder="* Nome:"/>
@@ -36,7 +37,7 @@
 							<input type="text" class="input_text" name="email" id="email" size="35" value="" placeholder="* Email:"/>
 						</label>
 						<label>
-							<input type="text" class="input_text" name="email" id="confirmEmail" size="35" value="" placeholder="* Confirmar email:"/>
+							<input type="text" class="input_text" name="email2" id="confirmEmail" size="35" value="" placeholder="* Confirmar email:" onblur="checarEmail(this);"/>
 						</label>
 						<label>
 							<input type="password" class="input_text" name="email" id="password" size="35" value="" placeholder="* Senha:"/>
@@ -44,15 +45,18 @@
 						<label>
 							<div class="dataNasc">
 								<h4>Data Nascimento:</h4>
-								<input type="text" class="input_date" name="dia" size="2" maxlength="2" value="" placeholder="dd">
-								<input type="text" class="input_date" name="mes" size="2" maxlength="2" value="" placeholder="mm">
-								<input type="text" class="input_date" name="ano" size="4" maxlength="4" value="" placeholder="aaaa">
+								<input type="text" class="input_date" name="dia" id="dia" size="2" maxlength="2" value="" placeholder="dd">
+								<input type="text" class="input_date" name="mes" id="mes" size="2" maxlength="2" value="" placeholder="mm">
+								<input type="text" class="input_date" name="ano" id="ano" size="4" maxlength="4" value="" placeholder="aaaa">
 							</div> </label>
 						<label>
-							<input type="radio" class="input_radio" name="sexo" id="sexo" value="M" />
-							Masculino
-							<input type="radio" class="input_radio" name="sexo" id="sexo" value="F" />
-							Feminino </label>
+							<div class="sexo">
+								<input type="radio" class="input_radio" name="sexo" id="sexoM" value="M" />
+								Masculino
+								<input type="radio" class="input_radio" name="sexo" id="sexoF" value="F" />
+								Feminino
+							</div> </label>
+
 						<label>
 							<input type="submit" class="submit" value="Cadastrar" />
 						</label>
