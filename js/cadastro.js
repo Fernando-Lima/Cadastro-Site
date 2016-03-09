@@ -25,8 +25,15 @@ function Enviar() {
 	if (senha.value == "") {
 		alert('Campo senha obrigatório');
 		return false;
-	}if(senha.value.length < 8){
+	}
+	if (senha.value.length < 8) {
 		alert('senha muito curta, obrigatório mais de 8 digitos');
+		document.menuForm.senha.focus();
+		return false;
+	}
+	var confirmSenha = document.getElementById("confirmPassword");
+	if (confirmSenha.value == "") {
+		alert('Campo confirmar senha obrigatório');
 		return false;
 	}
 	var dia = document.getElementById("dia");
@@ -44,18 +51,42 @@ function Enviar() {
 		alert('Campo data/ano obrigatório');
 		return false;
 	}
-	if(document.getElementById('sexoM').checked == false && document.getElementById('sexoF').checked == false){
+	if (document.getElementById('sexoM').checked == false && document.getElementById('sexoF').checked == false) {
 		alert('informe um gênero');
 		return false;
 	}
 	alert('Cadastro efetuado com sucesso!');
 
 }
+
 function checarEmail(input) {
-		if (input.value != document.getElementById('email').value) {
-			alert('email não confere');
-			document.menuForm.email2.focus();
-			return false;
-		}
+	if (input.value != document.getElementById('email').value) {
+		alert('email não confere');
+		document.menuForm.email2.value="";
+		return false;
 	}
+}
+
+function checarSenha(input) {
+	if (input.value != document.getElementById('password').value) {
+		alert('senha não confere');
+		document.menuForm.confirmSenha.value="";
+		return false;
+	}
+}
+
+function login() {
+	var login = document.getElementById("emailLogin");
+	var loginSenha = document.getElementById("senhaLogin");
+	if (login.value == "") {
+		alert('Campo email obrigatório');
+		return false;
+	}
+	if (loginSenha.value == "") {
+		alert('Campo senha obrigatório');
+		loginSenha.focus();
+		return false;
+	}
+	alert('Login efetuado com sucesso!');
+}
 

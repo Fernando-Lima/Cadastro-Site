@@ -19,11 +19,15 @@
 
 				</div>
 				<div class="signIn">
-					<input type="submit" class="login" value="Entrar" />
-					<!--/teste git-->
+					<input type="text" class="input_login" name="emailLogin" id="emailLogin" size="15" placeholder="Informe seu email" />
+					<input type="password" class="input_login" name="senhaLogin" id="senhaLogin" size="15" placeholder="Informe sua senha" />
+					<input type="submit" class="login" value="Entrar" onclick="login();"/>
 				</div>
 			</div>
 			<div class="container">
+				<div class="sidebar">
+					<h3>Utilize este espaço para </br> efetuar seu cadastro no site </h3>
+				</div>
 				<div class="cadastro">
 					<form name="menuForm" method="post" id="formulario" onsubmit="return(Enviar())">
 						<h2>Cadastre-se:</h2>
@@ -40,7 +44,10 @@
 							<input type="text" class="input_text" name="email2" id="confirmEmail" size="35" value="" placeholder="* Confirmar email:" onblur="checarEmail(this);"/>
 						</label>
 						<label>
-							<input type="password" class="input_text" name="email" id="password" size="35" value="" placeholder="* Senha:"/>
+							<input type="password" class="input_text" name="senha" id="password" size="35" value="" placeholder="* Senha:"/>
+						</label>
+						<label>
+							<input type="password" class="input_text" name="confirmSenha" id="confirmPassword" size="35" value="" placeholder="* confirmar senha:" onblur="checarSenha(this);"/>
 						</label>
 						<label>
 							<div class="dataNasc">
